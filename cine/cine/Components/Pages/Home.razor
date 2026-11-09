@@ -1,0 +1,63 @@
+﻿@page "/"
+@using cine.Models
+@using Microsoft.EntityFrameworkCore
+@inject CineDbContext DbContext
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
+
+<PageTitle>Cine - Cartelera</PageTitle>
+
+<div class="container my-4">
+    <h1 class="text-center mb-4"> Cartelera de Cine</h1>
+
+    @if (funciones == null)
+    {
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p>Conectando con Supabase y cargando funciones...</p>
+        </div>
+    }
+    else if (!funciones.Any())
+    {
+        <div class="alert alert-info text-center">
+            No hay funciones programadas en este momento.
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var funcion in funciones)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-primary">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">@funcion.Pelicula?.Titulo</h5>
+                            <p class="card-text text-muted">@funcion.Pelicula?.Sinopsis</p>
+                            <hr />
+                            <p class="mb-1"><strong>Sala:</strong> @funcion.Sala?.Nombre</p>
+                            <p class="mb-1"><strong>Horario:</strong> @funcion.FechaHora.ToString("dd/MM/yyyy hh:mm tt")</p>
+                            <p class="mb-1"><strong>Duración:</strong> @funcion.Pelicula?.DuracionMinutos min</p>
+                            <p class="text-success fw-bold fs-5 mb-3">Precio: $@funcion.PrecioEntrada</p>
+
+                            <a href="/comprar/@funcion.Id" class="btn btn-primary w-100 fw-bold">
+                                 Seleccionar Asientos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private List<Funcion>? funciones;
+
+    protected override async Task OnInitializedAsync()
+    {
+        funciones = await DbContext.Funciones
+            .Include(f => f.Pelicula)
+            .Include(f => f.Sala)
+            .ToListAsync();
+    }
+}

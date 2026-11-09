@@ -1,0 +1,84 @@
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.csproj.AssemblyReference.cache
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.GeneratedMSBuildEditorConfig.editorconfig
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.AssemblyInfoInputs.cache
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.AssemblyInfo.cs
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.csproj.CoreCompileInputs.cache
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.MvcApplicationPartsAssemblyInfo.cache
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\appsettings.Development.json
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\appsettings.json
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.staticwebassets.runtime.json
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.staticwebassets.endpoints.json
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.exe
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.deps.json
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.runtimeconfig.json
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.pdb
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Npgsql.dll
+D:\Universidad\SistemasProgramables\cine\cine\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\scopedcss\bundle\cine.styles.css
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\staticwebassets.build.json
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\staticwebassets.development.json
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.csproj.Up2Date
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.dll
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\refint\cine.dll
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.pdb
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.genruntimeconfig.cache
+D:\Universidad\SistemasProgramables\cine\cine\obj\Debug\net8.0\ref\cine.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\appsettings.Development.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\appsettings.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.staticwebassets.endpoints.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.staticwebassets.runtime.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.exe
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.deps.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.runtimeconfig.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\cine.pdb
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Npgsql.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.csproj.AssemblyReference.cache
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.GeneratedMSBuildEditorConfig.editorconfig
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.AssemblyInfoInputs.cache
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.AssemblyInfo.cs
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.csproj.CoreCompileInputs.cache
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.MvcApplicationPartsAssemblyInfo.cache
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\scopedcss\bundle\cine.styles.css
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\staticwebassets.build.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\staticwebassets.development.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.csproj.Up2Date
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\refint\cine.dll
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.pdb
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\cine.genruntimeconfig.cache
+D:\Universidad\9no Semestre\SistemasProgramables\cine\cine\obj\Debug\net8.0\ref\cine.dll

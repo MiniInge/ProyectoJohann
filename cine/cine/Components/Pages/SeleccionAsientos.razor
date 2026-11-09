@@ -1,0 +1,194 @@
+﻿@page "/comprar/{FuncionId:int}"
+@using cine.Models
+@using Microsoft.EntityFrameworkCore
+@inject CineDbContext DbContext
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
+
+<PageTitle>Selección de Asientos</PageTitle>
+
+<div class="container my-4 text-center">
+    @if (funcion == null)
+    {
+        <div class="spinner-border text-primary" role="status"></div>
+        <p>Cargando mapa de sala...</p>
+    }
+    else if (mensajeExito)
+    {
+        <div class="alert alert-success p-4 shadow">
+            <h3>Compra Realizada con Exito</h3>
+            <p>Gracias <strong>@nombreCliente</strong> por tu compra.</p>
+            <p>Se ha guardado tu reserva en la base de datos de Supabase.</p>
+            <button class="btn btn-primary mt-3" @onclick='() => Navigation.NavigateTo("/")'>Volver a la Cartelera</button>
+        </div>
+    }
+    else
+    {
+        <h2 class="mb-3"> Selecciona tus Asientos</h2>
+
+        //Información de la Función 
+        <div class="card p-3 mb-4 shadow-sm mx-auto" style="max-width: 600px;">
+            <h4>@funcion.Pelicula?.Titulo</h4>
+            <p class="mb-1"><strong>Sala:</strong> @funcion.Sala?.Nombre | <strong>Horario:</strong> @funcion.FechaHora.ToString("g")</p>
+            <p class="text-success fw-bold mb-0">Precio por entrada: $@funcion.PrecioEntrada</p>
+        </div>
+
+        //Pantalla del Cine
+        <div class="pantalla shadow-sm mb-5 mx-auto rounded py-2 bg-dark text-white fw-bold" style="max-width: 500px;">
+             PANTALLA DE PROYECCIÓN
+        </div>
+
+        //Mapa de Asientos
+        <div class="d-flex flex-column align-items-center mb-4">
+            @for (int f = 0; f < (funcion.Sala?.TotalFilas ?? 0); f++)
+            {
+                char letraFila = (char)('A' + f);
+                <div class="d-flex align-items-center mb-2">
+                    <span class="fw-bold me-3 text-secondary" style="width: 20px;">@letraFila</span>
+                    @for (int c = 1; c <= (funcion.Sala?.AsientosPorFila ?? 0); c++)
+                    {
+                        int numeroAsiento = c;
+                        bool estaOcupado = asientosOcupados.Any(a => a.Fila == letraFila && a.Numero == numeroAsiento);
+                        bool estaSeleccionado = asientosSeleccionados.Any(a => a.Fila == letraFila && a.Numero == numeroAsiento);
+
+                        string claseBoton = "btn-outline-primary";
+                        if (estaOcupado) claseBoton = "btn-secondary disabled";
+                        else if (estaSeleccionado) claseBoton = "btn-success";
+
+                        <button type="button"
+                                class="btn @claseBoton m-1 asiento-btn"
+                                disabled="@estaOcupado"
+                                @onclick="() => ToggleAsiento(letraFila, numeroAsiento)">
+                            @numeroAsiento
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+
+        // Leyenda de colores 
+        <div class="d-flex justify-content-center gap-4 mb-4">
+            <span class="badge bg-light border border-primary text-dark p-2">Libre</span>
+            <span class="badge bg-success p-2">Seleccionado</span>
+            <span class="badge bg-secondary p-2">Ocupado</span>
+        </div>
+
+        // Formulario de Resumen y Comprador 
+        <div class="card p-4 mx-auto shadow-sm" style="max-width: 500px;">
+            <h5 class="card-title mb-3">Resumen de Compra</h5>
+
+            <p class="text-start">
+                <strong>Asientos seleccionados:</strong>
+                @if (asientosSeleccionados.Any())
+                {
+                    <span class="badge bg-info text-dark ms-1">
+                        @string.Join(", ", asientosSeleccionados.Select(a => $"{a.Fila}{a.Numero}"))
+                    </span>
+                }
+                else
+                {
+                    <span class="text-muted">Ninguno seleccionado</span>
+                }
+            </p>
+
+            <h4 class="text-start my-3">Total a Pagar: <span class="text-primary">$@(asientosSeleccionados.Count* funcion.PrecioEntrada)</span></h4>
+
+            <div class="text-start mb-3">
+                <label class="form-label fw-bold">Nombre Completo:</label>
+                <input type="text" class="form-control" placeholder="Ej: Juan Pérez" @bind="nombreCliente" />
+            </div>
+
+            <div class="text-start mb-3">
+                <label class="form-label fw-bold">Correo Electrónico:</label>
+                <input type="email" class="form-control" placeholder="ejemplo@correo.com" @bind="emailCliente" />
+            </div>
+
+            <button class="btn btn-primary w-100 py-2 fw-bold"
+                    disabled="@(!asientosSeleccionados.Any() || string.IsNullOrWhiteSpace(nombreCliente) || string.IsNullOrWhiteSpace(emailCliente))"
+                    @onclick="ConfirmarReserva">
+                 Confirmar y Comprar Boletos
+            </button>
+        </div>
+    }
+</div>
+
+<style>
+    .pantalla {
+        border-bottom: 5px solid #0d6efd;
+        letter-spacing: 4px;
+        font-size: 0.85rem;
+    }
+
+    .asiento-btn {
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        font-size: 0.85rem;
+        font-weight: bold;
+    }
+</style>
+
+@code {
+    [Parameter] public int FuncionId { get; set; }
+
+    private Funcion? funcion;
+    private List<(char Fila, int Numero)> asientosOcupados = new();
+    private List<(char Fila, int Numero)> asientosSeleccionados = new();
+
+    private string nombreCliente = "";
+    private string emailCliente = "";
+    private bool mensajeExito = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        funcion = await DbContext.Funciones
+            .Include(f => f.Pelicula)
+            .Include(f => f.Sala)
+            .FirstOrDefaultAsync(f => f.Id == FuncionId);
+
+        if (funcion != null)
+        {
+            asientosOcupados = await DbContext.DetallesReserva
+                .Where(d => d.Reserva!.FuncionId == FuncionId)
+                .Select(d => new ValueTuple<char, int>(d.Fila, d.NumeroAsiento))
+                .ToListAsync();
+        }
+    }
+
+    private void ToggleAsiento(char fila, int numero)
+    {
+        var item = (fila, numero);
+        if (asientosSeleccionados.Contains(item))
+        {
+            asientosSeleccionados.Remove(item);
+        }
+        else
+        {
+            asientosSeleccionados.Add(item);
+        }
+    }
+
+    private async Task ConfirmarReserva()
+    {
+        if (funcion == null || !asientosSeleccionados.Any()) return;
+
+        var reserva = new Reserva
+        {
+            FuncionId = funcion.Id,
+            ClienteNombre = nombreCliente,
+            ClienteEmail = emailCliente,
+            FechaCompra = DateTime.UtcNow,
+            TotalPagado = asientosSeleccionados.Count * funcion.PrecioEntrada,
+            Detalles = asientosSeleccionados.Select(a => new ReservaDetalle
+            {
+                Fila = a.Fila,
+                NumeroAsiento = a.Numero
+            }).ToList()
+        };
+
+        DbContext.Reservas.Add(reserva);
+        await DbContext.SaveChangesAsync();
+
+        mensajeExito = true;
+    }
+}
